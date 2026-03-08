@@ -733,7 +733,7 @@ body::before {
 <div class="toast" id="toast"></div>
 
 <script>
-const API = "https://api.anthropic.com/v1/messages";
+const API = "/api/proxy";
 
 const PROFILE = {
   name: "Anamika Gupta",
@@ -1013,9 +1013,7 @@ matchScore must be 60-96 range. Vary salaries realistically (DKK for DK, EUR for
     const res = await fetch(API, {
       method:'POST',
       headers:{
-        'Content-Type':'application/json',
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
+        'Content-Type':'application/json'
       },
       body: JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:8000, messages:[{role:'user',content:prompt}] })
     });
